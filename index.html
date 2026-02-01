@@ -3,57 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>التقرير الشامل - 2025</title>
+    <title>Diamond Group - Social Media Report | يناير 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Tajawal', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            overflow-x: hidden;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+            color: white;
         }
         
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        }
-        
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+        .gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #F4E5C2 50%, #D4AF37 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
+        .gold-bg {
+            background: linear-gradient(135deg, #D4AF37 0%, #F4E5C2 50%, #D4AF37 100%);
         }
         
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
         }
         
-        .counter {
-            font-size: 3rem;
-            font-weight: 900;
-            color: white;
-        }
-        
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            pointer-events: none;
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
         }
         
         .chart-container {
@@ -62,202 +46,351 @@
             width: 100%;
         }
         
-        .kpi-icon {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .counter {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #D4AF37;
+        }
+        
+        .metric-up {
+            color: #10b981;
+        }
+        
+        .metric-down {
+            color: #ef4444;
+        }
+        
+        .diamond-pattern {
+            background-image: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        .social-icon {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05));
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
     </style>
 </head>
-<body class="min-h-screen p-4 md:p-8">
+<body class="min-h-screen diamond-pattern">
 
-    <!-- Background Particles -->
-    <div id="particles" class="fixed inset-0 pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto space-y-8 relative z-10">
-        
-        <!-- Header -->
-        <header class="text-center mb-12 animate-float">
-            <h1 class="text-5xl md:text-7xl font-black text-white mb-4 drop-shadow-lg">
-                تقرير الأداء <span class="gradient-text">الشامل</span>
+    <!-- Header -->
+    <header class="relative overflow-hidden py-12 px-4">
+        <div class="absolute inset-0 bg-gradient-to-b from-yellow-900/20 to-transparent"></div>
+        <div class="max-w-7xl mx-auto relative z-10 text-center">
+            <div class="mb-4 inline-block p-4 rounded-full bg-black/30 border border-yellow-500/30">
+                <i class="fas fa-gem text-4xl text-yellow-500"></i>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black mb-4">
+                <span class="gold-gradient">DIAMOND GROUP</span>
             </h1>
-            <p class="text-xl text-gray-200">الربع الأول 2025 | تحليلات معمقة وتوقعات مستقبلية</p>
-            <div class="mt-4 inline-block glass-card px-6 py-2 rounded-full">
-                <span class="text-white font-bold">آخر تحديث: فبراير 2025</span>
-            </div>
-        </header>
-
-        <!-- KPI Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- KPI 1 -->
-            <div class="glass-card rounded-2xl p-6 text-center text-white group cursor-pointer">
-                <div class="text-5xl mb-4 transform group-hover:scale-110 transition-transform">📈</div>
-                <h3 class="text-gray-200 mb-2">إجمالي المبيعات</h3>
-                <div class="counter" data-target="1250000">0</div>
-                <span class="text-green-400 font-bold">↑ 23% عن الشهر الماضي</span>
-            </div>
-
-            <!-- KPI 2 -->
-            <div class="glass-card rounded-2xl p-6 text-center text-white group cursor-pointer">
-                <div class="text-5xl mb-4 transform group-hover:scale-110 transition-transform">👥</div>
-                <h3 class="text-gray-200 mb-2">العملاء الجدد</h3>
-                <div class="counter" data-target="8540">0</div>
-                <span class="text-green-400 font-bold">↑ 12% عن الشهر الماضي</span>
-            </div>
-
-            <!-- KPI 3 -->
-            <div class="glass-card rounded-2xl p-6 text-center text-white group cursor-pointer">
-                <div class="text-5xl mb-4 transform group-hover:scale-110 transition-transform">💰</div>
-                <h3 class="text-gray-200 mb-2">متوسط قيمة الطلب</h3>
-                <div class="counter" data-target="450">0</div>
-                <span class="text-red-400 font-bold">↓ 5% عن الشهر الماضي</span>
-            </div>
-
-            <!-- KPI 4 -->
-            <div class="glass-card rounded-2xl p-6 text-center text-white group cursor-pointer">
-                <div class="text-5xl mb-4 transform group-hover:scale-110 transition-transform">🎯</div>
-                <h3 class="text-gray-200 mb-2">معدل التحويل</h3>
-                <div class="counter" data-target="3.2">0</div>
-                <span class="text-green-400 font-bold">↑ 0.8% عن الشهر الماضي</span>
+            <p class="text-2xl text-gray-300 mb-2">التقرير الشهري للسوشيال ميديا</p>
+            <div class="inline-block px-6 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-400">
+                يناير 2026 | January 2026
             </div>
         </div>
+    </header>
 
-        <!-- Charts Section -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-            <!-- Line Chart -->
-            <div class="glass-card rounded-2xl p-6">
-                <h2 class="text-2xl font-bold text-white mb-6 text-right">📊 تطور المبيعات الشهرية</h2>
-                <div class="chart-container">
-                    <canvas id="salesChart"></canvas>
+    <!-- Overview Insights -->
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold mb-8 text-right border-r-4 border-yellow-500 pr-4">نظرة عامة على الأداء</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Views -->
+            <div class="glass-card rounded-2xl p-6 text-center group">
+                <div class="flex justify-between items-center mb-4">
+                    <i class="fas fa-eye text-3xl text-yellow-500"></i>
+                    <span class="text-sm text-gray-400">Views</span>
+                </div>
+                <div class="counter" data-target="1200000">0</div>
+                <div class="text-2xl font-bold text-white mb-2">1.2M</div>
+                <div class="metric-up text-sm">
+                    <i class="fas fa-arrow-up"></i> 254.9%
                 </div>
             </div>
 
-            <!-- Doughnut Chart -->
+            <!-- Viewers -->
+            <div class="glass-card rounded-2xl p-6 text-center group">
+                <div class="flex justify-between items-center mb-4">
+                    <i class="fas fa-users text-3xl text-yellow-500"></i>
+                    <span class="text-sm text-gray-400">Viewers</span>
+                </div>
+                <div class="counter" data-target="498900">0</div>
+                <div class="text-2xl font-bold text-white mb-2">498.9K</div>
+                <div class="metric-up text-sm">
+                    <i class="fas fa-arrow-up"></i> 265.2%
+                </div>
+            </div>
+
+            <!-- Content Interactions -->
+            <div class="glass-card rounded-2xl p-6 text-center group">
+                <div class="flex justify-between items-center mb-4">
+                    <i class="fas fa-heart text-3xl text-yellow-500"></i>
+                    <span class="text-sm text-gray-400">Content Interactions</span>
+                </div>
+                <div class="counter" data-target="3000">0</div>
+                <div class="text-2xl font-bold text-white mb-2">3K</div>
+                <div class="metric-up text-sm">
+                    <i class="fas fa-arrow-up"></i> 221.2%
+                </div>
+            </div>
+
+            <!-- Link Clicks -->
+            <div class="glass-card rounded-2xl p-6 text-center group">
+                <div class="flex justify-between items-center mb-4">
+                    <i class="fas fa-mouse-pointer text-3xl text-yellow-500"></i>
+                    <span class="text-sm text-gray-400">Link Clicks</span>
+                </div>
+                <div class="counter" data-target="5900">0</div>
+                <div class="text-2xl font-bold text-white mb-2">5.9K</div>
+                <div class="metric-up text-sm">
+                    <i class="fas fa-arrow-up"></i> 116.1%
+                </div>
+            </div>
+
+            <!-- Visits -->
+            <div class="glass-card rounded-2xl p-6 text-center group">
+                <div class="flex justify-between items-center mb-4">
+                    <i class="fas fa-store text-3xl text-yellow-500"></i>
+                    <span class="text-sm text-gray-400">Visits</span>
+                </div>
+                <div class="counter" data-target="11300">0</div>
+                <div class="text-2xl font-bold text-white mb-2">11.3K</div>
+                <div class="metric-up text-sm">
+                    <i class="fas fa-arrow-up"></i> 95.8%
+                </div>
+            </div>
+
+            <!-- Follows -->
+            <div class="glass-card rounded-2xl p-6 text-center group">
+                <div class="flex justify-between items-center mb-4">
+                    <i class="fas fa-user-plus text-3xl text-yellow-500"></i>
+                    <span class="text-sm text-gray-400">Follows</span>
+                </div>
+                <div class="counter" data-target="3200">0</div>
+                <div class="text-2xl font-bold text-white mb-2">3.2K</div>
+                <div class="metric-up text-sm">
+                    <i class="fas fa-arrow-up"></i> 2.7K%
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Performance Chart -->
             <div class="glass-card rounded-2xl p-6">
-                <h2 class="text-2xl font-bold text-white mb-6 text-right">🌍 توزيع العملاء حسب المنطقة</h2>
+                <h3 class="text-xl font-bold mb-6 text-right text-yellow-500">مؤشرات الأداء الرئيسية</h3>
                 <div class="chart-container">
-                    <canvas id="regionChart"></canvas>
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Audience Chart -->
+            <div class="glass-card rounded-2xl p-6">
+                <h3 class="text-xl font-bold mb-6 text-right text-yellow-500">توزيع الجمهور</h3>
+                <div class="chart-container">
+                    <canvas id="audienceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Messaging Performance -->
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold mb-8 text-right border-r-4 border-yellow-500 pr-4">أداء الرسائل</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="glass-card rounded-2xl p-6 text-center border-t-4 border-yellow-500">
+                <div class="text-gray-400 mb-2">إجمالي جهات الاتصال</div>
+                <div class="counter text-4xl" data-target="553">0</div>
+                <div class="text-3xl font-bold">553</div>
+                <div class="metric-up text-sm mt-2">
+                    <i class="fas fa-arrow-up"></i> 72.3%
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 text-center border-t-4 border-blue-500">
+                <div class="text-gray-400 mb-2">المحادثات الجديدة</div>
+                <div class="counter text-4xl" data-target="594">0</div>
+                <div class="text-3xl font-bold">594</div>
+                <div class="metric-up text-sm mt-2">
+                    <i class="fas fa-arrow-up"></i> 78.4%
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 text-center border-t-4 border-green-500">
+                <div class="text-gray-400 mb-2">معدل الاستجابة</div>
+                <div class="counter text-4xl" data-target="84.5">0</div>
+                <div class="text-3xl font-bold">84.5%</div>
+                <div class="metric-up text-sm mt-2">
+                    <i class="fas fa-arrow-up"></i> 264.5%
                 </div>
             </div>
         </div>
 
-        <!-- Progress Bars Section -->
-        <div class="glass-card rounded-2xl p-8 mt-8">
-            <h2 class="text-2xl font-bold text-white mb-6 text-right">🎯 تحقيق الأهداف</h2>
+        <!-- Response Time -->
+        <div class="glass-card rounded-2xl p-6 mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-yellow-500">متوسط وقت الرد</h3>
+                <div class="text-2xl font-bold">3h 17m</div>
+            </div>
+            <div class="w-full bg-gray-800 rounded-full h-4">
+                <div class="bg-gradient-to-r from-yellow-600 to-yellow-400 h-4 rounded-full" style="width: 75%"></div>
+            </div>
+            <div class="metric-up text-sm mt-2">
+                <i class="fas fa-arrow-down"></i> 69.5% تحسن
+            </div>
+        </div>
+    </section>
+
+    <!-- Ads Performance -->
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold mb-8 text-right border-r-4 border-yellow-500 pr-4">أداء الإعلانات</h2>
+        
+        <div class="glass-card rounded-2xl p-8 bg-gradient-to-br from-black/50 to-yellow-900/10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-gray-400 mb-2">Extra Sales Ads</div>
+                    <div class="text-3xl font-bold text-yellow-500">54,041.56 <span class="text-lg">LE</span></div>
+                </div>
+                <div class="p-4 border-x border-yellow-500/20">
+                    <div class="text-gray-400 mb-2">Mr.Mo'men Ads</div>
+                    <div class="text-3xl font-bold text-yellow-500">27,489.87 <span class="text-lg">LE</span></div>
+                </div>
+                <div class="p-4">
+                    <div class="text-gray-400 mb-2">إجمالي الإعلانات</div>
+                    <div class="text-4xl font-bold gold-gradient">81,531.43 <span class="text-xl">LE</span></div>
+                </div>
+            </div>
             
-            <div class="space-y-6">
-                <div>
-                    <div class="flex justify-between mb-2 text-white">
-                        <span>مبيعات المنتج A</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden">
-                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-4 rounded-full transition-all duration-1000 ease-out" style="width: 0%" data-width="85%"></div>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 pt-8 border-t border-yellow-500/20">
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-400">إجمالي الرسائل</span>
+                    <span class="text-2xl font-bold text-white">878</span>
                 </div>
-                
-                <div>
-                    <div class="flex justify-between mb-2 text-white">
-                        <span>رضا العملاء</span>
-                        <span>92%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden">
-                        <div class="bg-gradient-to-r from-blue-500 to-cyan-500 h-4 rounded-full transition-all duration-1000 ease-out" style="width: 0%" data-width="92%"></div>
-                    </div>
-                </div>
-                
-                <div>
-                    <div class="flex justify-between mb-2 text-white">
-                        <span>كفاءة التسويق</span>
-                        <span>68%</span>
-                    </div>
-                    <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden">
-                        <div class="bg-gradient-to-r from-green-500 to-emerald-500 h-4 rounded-full transition-all duration-1000 ease-out" style="width: 0%" data-width="68%"></div>
-                    </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-400">العملاء المحتملين (Leads)</span>
+                    <span class="text-2xl font-bold text-white">648</span>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Interactive Table -->
-        <div class="glass-card rounded-2xl p-6 mt-8 overflow-hidden">
-            <h2 class="text-2xl font-bold text-white mb-6 text-right">🏆 أفضل المنتجات أداءً</h2>
-            <div class="overflow-x-auto">
-                <table class="w-full text-white">
-                    <thead class="border-b border-gray-600">
-                        <tr>
-                            <th class="py-3 px-4 text-right">المنتج</th>
-                            <th class="py-3 px-4 text-right">المبيعات</th>
-                            <th class="py-3 px-4 text-right">النمو</th>
-                            <th class="py-3 px-4 text-right">الحالة</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-700">
-                        <tr class="hover:bg-white hover:bg-opacity-10 transition-colors cursor-pointer group">
-                            <td class="py-4 px-4 font-bold">المنتج الذهبي</td>
-                            <td class="py-4 px-4">450,000 ج.م</td>
-                            <td class="py-4 px-4 text-green-400">+25%</td>
-                            <td class="py-4 px-4"><span class="bg-green-500 bg-opacity-20 text-green-300 px-3 py-1 rounded-full text-sm">ممتاز</span></td>
-                        </tr>
-                        <tr class="hover:bg-white hover:bg-opacity-10 transition-colors cursor-pointer group">
-                            <td class="py-4 px-4 font-bold">المنتج الفضي</td>
-                            <td class="py-4 px-4">320,000 ج.م</td>
-                            <td class="py-4 px-4 text-green-400">+15%</td>
-                            <td class="py-4 px-4"><span class="bg-blue-500 bg-opacity-20 text-blue-300 px-3 py-1 rounded-full text-sm">جيد جداً</span></td>
-                        </tr>
-                        <tr class="hover:bg-white hover:bg-opacity-10 transition-colors cursor-pointer group">
-                            <td class="py-4 px-4 font-bold">المنتج البرونزي</td>
-                            <td class="py-4 px-4">180,000 ج.م</td>
-                            <td class="py-4 px-4 text-red-400">-5%</td>
-                            <td class="py-4 px-4"><span class="bg-yellow-500 bg-opacity-20 text-yellow-300 px-3 py-1 rounded-full text-sm">يحتاج تحسين</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+    <!-- Top Posts Gallery -->
+    <section class="max-w-7xl mx-auto px-4 py-8 mb-12">
+        <h2 class="text-3xl font-bold mb-8 text-right border-r-4 border-yellow-500 pr-4">أفضل المنشورات أداءً</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Top Post 1 -->
+            <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer">
+                <div class="h-48 bg-gradient-to-br from-blue-900 to-blue-600 flex items-center justify-center relative">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&auto=format&fit=crop&q=60')] bg-cover bg-center opacity-50"></div>
+                    <div class="relative text-center">
+                        <div class="text-4xl font-bold text-white mb-2">ذا فيو</div>
+                        <div class="text-yellow-400">الكيلو 79</div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-center text-sm text-gray-400 mb-2">
+                        <span><i class="fas fa-eye ml-1"></i> 4.9K</span>
+                        <span><i class="fas fa-heart ml-1"></i> 64</span>
+                    </div>
+                    <p class="text-sm line-clamp-2">دايموند جروب عاملة عرض مش هتتكرر في الساحل الشمالي...</p>
+                </div>
+            </div>
+
+            <!-- Top Post 2 -->
+            <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer">
+                <div class="h-48 bg-gradient-to-br from-green-900 to-green-600 flex items-center justify-center relative">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=500&auto=format&fit=crop&q=60')] bg-cover bg-center opacity-50"></div>
+                    <div class="relative text-center">
+                        <div class="text-4xl font-bold text-white mb-2">جاردينيا</div>
+                        <div class="text-yellow-400">الكيلو 64</div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-center text-sm text-gray-400 mb-2">
+                        <span><i class="fas fa-eye ml-1"></i> 1.9K</span>
+                        <span><i class="fas fa-heart ml-1"></i> 15</span>
+                    </div>
+                    <p class="text-sm line-clamp-2">مش كل مشروع تقدر تتعاينه قبل ما تشتري...</p>
+                </div>
+            </div>
+
+            <!-- Top Post 3 -->
+            <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer">
+                <div class="h-48 bg-gradient-to-br from-purple-900 to-purple-600 flex items-center justify-center relative">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500&auto=format&fit=crop&q=60')] bg-cover bg-center opacity-50"></div>
+                    <div class="relative text-center">
+                        <div class="text-3xl font-bold text-white mb-2">شاليهك جاهز</div>
+                        <div class="text-yellow-400">مشروعات متنوعة</div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-center text-sm text-gray-400 mb-2">
+                        <span><i class="fas fa-eye ml-1"></i> 1.6K</span>
+                        <span><i class="fas fa-heart ml-1"></i> 12</span>
+                    </div>
+                    <p class="text-sm line-clamp-2">الصيف الجاي انت معانا في ذا فيو...</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Footer -->
-        <footer class="text-center text-white mt-12 pb-8 opacity-70">
-            <p>تم إعداد هذا التقرير بواسطة فريق التحليلات | 2025</p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="text-center py-8 border-t border-yellow-500/20 mt-12">
+        <div class="flex justify-center items-center gap-2 mb-4">
+            <i class="fas fa-gem text-yellow-500 text-2xl"></i>
+            <span class="text-2xl font-bold gold-gradient">DIAMOND GROUP</span>
+        </div>
+        <p class="text-gray-400">تطوير عقاري | الساحل الشمالي</p>
+        <p class="text-sm text-gray-600 mt-4">تم إعداد هذا التقرير بواسطة فريق التسويق | يناير 2026</p>
+    </footer>
 
     <script>
         // Counter Animation
         const counters = document.querySelectorAll('.counter');
         counters.forEach(counter => {
             const target = +counter.getAttribute('data-target');
+            const isFloat = counter.getAttribute('data-target').includes('.');
             const increment = target / 100;
             
             const updateCounter = () => {
-                const c = +counter.innerText;
+                const c = +counter.innerText.replace(/,/g, '');
                 if(c < target) {
-                    counter.innerText = Math.ceil(c + increment);
+                    const next = c + increment;
+                    counter.innerText = isFloat ? next.toFixed(1) : Math.ceil(next).toLocaleString();
                     setTimeout(updateCounter, 20);
                 } else {
-                    counter.innerText = target.toLocaleString();
+                    counter.innerText = isFloat ? target : target.toLocaleString();
                 }
             };
             updateCounter();
         });
 
-        // Progress Bars Animation
-        setTimeout(() => {
-            document.querySelectorAll('[data-width]').forEach(bar => {
-                bar.style.width = bar.getAttribute('data-width');
-            });
-        }, 500);
-
-        // Sales Chart
-        const ctx1 = document.getElementById('salesChart').getContext('2d');
+        // Performance Chart
+        const ctx1 = document.getElementById('performanceChart').getContext('2d');
         new Chart(ctx1, {
             type: 'line',
             data: {
-                labels: ['يناير', 'فبراير', 'مارس', 'أبريل', ' مايو', 'يونيو'],
+                labels: ['1 يناير', '6 يناير', '11 يناير', '16 يناير', '21 يناير', '26 يناير', '31 يناير'],
                 datasets: [{
-                    label: 'المبيعات (ج.م)',
-                    data: [65000, 59000, 80000, 81000, 56000, 95000],
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    label: 'المشاهدات (Views)',
+                    data: [20, 45, 60, 55, 75, 50, 65],
+                    borderColor: '#D4AF37',
+                    backgroundColor: 'rgba(212, 175, 55, 0.1)',
+                    borderWidth: 3,
+                    tension: 0.4,
+                    fill: true
+                }, {
+                    label: 'التفاعلات',
+                    data: [10, 25, 40, 35, 45, 30, 40],
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
                     borderWidth: 3,
                     tension: 0.4,
                     fill: true
@@ -268,38 +401,33 @@
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        labels: { color: 'white' }
+                        labels: { color: 'white', font: { family: 'Tajawal' } }
                     }
                 },
                 scales: {
-                    y: {
-                        ticks: { color: 'white' },
-                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    y: { 
+                        ticks: { color: 'rgba(255,255,255,0.7)' },
+                        grid: { color: 'rgba(255,255,255,0.1)' }
                     },
-                    x: {
-                        ticks: { color: 'white' },
-                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    x: { 
+                        ticks: { color: 'rgba(255,255,255,0.7)' },
+                        grid: { color: 'rgba(255,255,255,0.1)' }
                     }
                 }
             }
         });
 
-        // Region Chart
-        const ctx2 = document.getElementById('regionChart').getContext('2d');
+        // Audience Chart
+        const ctx2 = document.getElementById('audienceChart').getContext('2d');
         new Chart(ctx2, {
             type: 'doughnut',
             data: {
-                labels: ['القاهرة', 'الإسكندرية', 'الدلتا', 'الصعيد', 'قناة السويس'],
+                labels: ['من المتابعين', 'من غير المتابعين'],
                 datasets: [{
-                    data: [35, 25, 20, 15, 5],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.8)',
-                        'rgba(54, 162, 235, 0.8)',
-                        'rgba(255, 206, 86, 0.8)',
-                        'rgba(75, 192, 192, 0.8)',
-                        'rgba(153, 102, 255, 0.8)'
-                    ],
-                    borderWidth: 0
+                    data: [5.8, 94.2],
+                    backgroundColor: ['#D4AF37', '#1f2937'],
+                    borderWidth: 0,
+                    hoverOffset: 4
                 }]
             },
             options: {
@@ -308,27 +436,11 @@
                 plugins: {
                     legend: {
                         position: 'right',
-                        labels: { color: 'white' }
+                        labels: { color: 'white', font: { family: 'Tajawal' } }
                     }
                 }
             }
         });
-
-        // Background Particles
-        function createParticles() {
-            const container = document.getElementById('particles');
-            for(let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.width = Math.random() * 10 + 'px';
-                particle.style.height = particle.style.width;
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.animation = `float ${Math.random() * 10 + 5}s infinite`;
-                container.appendChild(particle);
-            }
-        }
-        createParticles();
     </script>
 </body>
 </html>
